@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
-
-<!-- Mirrored from easytradepro.live/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 31 Dec 2023 12:47:03 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
     <!-- Standard Meta -->
     <meta charset="utf-8">
@@ -15,9 +11,9 @@
     <!-- Site Properties -->
     <title> Easytrade Pro</title>
     <!-- Critical preload -->
-    <link rel="preload" href="new/js/vendors/uikit.min.js" as="script">
-    <link rel="preload" href="new/css/vendors/uikit.min.css" as="style">
-    <link rel="preload" href="new/css/style.css" as="style">
+    <link rel="preload" href="{{ asset('new/js/vendors/uikit.min.js') }}" as="script">
+    <link rel="preload" href="{{ asset('new/css/vendors/uikit.min.css') }}" as="style">
+    <link rel="preload" href="{{ asset('new/css/style.css') }}" as="style">
     <!-- Icon preload -->
     <link rel="preload" href="new/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="new/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
@@ -29,8 +25,8 @@
     <link rel="shortcut icon" href="favicon.html" type="image/x-icon">
     <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.html">
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="new/css/vendors/uikit.min.css">
-    <link rel="stylesheet" href="new/css/style.css">
+    <link rel="stylesheet" href="{{ asset('new/css/vendors/uikit.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('new/css/style.css') }}">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <script>
@@ -239,12 +235,11 @@
     <!-- module totop begin -->
 </footer>
 <!-- Javascript -->
-<script src="new/js/vendors/uikit.min.js"></script>
-<script src="new/js/vendors/indonez.min.js"></script>
+<script src="{{ asset('new/js/vendors/uikit.min.js') }}"></script>
+<script src="{{ asset('new/js/vendors/indonez.min.js') }}"></script>
 <script src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" defer></script>
-<script src="new/js/config-theme.js"></script>
+<script src="{{ asset('new/js/config-theme.js') }}"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="http://code.tidio.co/fkuu1gxacszh3oob97azfgvccrj5nvef.js" async></script><!--// Chat Widgets -->
 <script>
     AOS.init();
 </script>
