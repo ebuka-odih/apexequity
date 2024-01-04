@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'pages.index');
+Route::view('/', 'pages.index')->name('index');
+Route::view('/about', 'pages.about')->name('about');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -27,3 +28,4 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+require __DIR__.'/admin.php';

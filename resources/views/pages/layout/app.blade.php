@@ -3,13 +3,13 @@
 <head>
     <!-- Standard Meta -->
     <meta charset="utf-8">
-    <meta name="description" content="Sign up With Easytrade Pro to join thousands of traders currently benefiting from high leveraged full STP/ECN CFD trading with zero conflict of interest through tier one liquidity.">
+    <meta name="description" content="Sign up With {{ env('APP_NAME') }} to join thousands of traders currently benefiting from high leveraged full STP/ECN CFD trading with zero conflict of interest through tier one liquidity.">
     <meta name="keywords" content="Online Forex, Forex, ECN/STP Broker, @$/7 Support, THEALERTNATION">
-    <meta name="author" content="Easytrade Pro">
+    <meta name="author" content="{{ env('APP_NAME') }}">
     <meta name="viewport" content="">
     <meta name="theme-color" content="#e9e8f0" />
     <!-- Site Properties -->
-    <title> Easytrade Pro</title>
+    <title> {{ env('APP_NAME') }} </title>
     <!-- Critical preload -->
     <link rel="preload" href="{{ asset('new/js/vendors/uikit.min.js') }}" as="script">
     <link rel="preload" href="{{ asset('new/css/vendors/uikit.min.css') }}" as="style">
@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="{{ asset('new/css/style.css') }}">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
     <script>
         // Detect request animation frame
         var scroll = window.requestAnimationFrame ||
@@ -143,7 +144,7 @@
                 <div class="uk-navbar-left uk-width-auto">
                     <div class="uk-navbar-item">
                         <!-- module logo begin -->
-                        <a class="uk-logo" href="index-2.html">
+                        <a class="uk-logo" href="{{ route('index') }}">
                             <img class="in-offset-top-10" src="img/in-lazy.svg" data-src="img/in-logo-1.png" alt="logo" width="330" height="36" data-uk-img>
                         </a>
                         <!-- module logo begin -->
@@ -151,8 +152,8 @@
                 </div>
                 <div class="uk-navbar-right uk-width-expand uk-flex uk-flex-right">
                     <ul class="uk-navbar-nav uk-visible@m">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html" style="color:#fff;">About</a></li>
+                        <li><a href="{{ route('index') }}">Home</a></li>
+                        <li><a href="{{ route('about') }}" style="color:#fff;">About</a></li>
                         <li><a href="contact.html" style="color:#fff;">Contact</a></li>
                         <li><a href="faq.html" style="color:#fff;">FAQ</a></li>
                     </ul>
@@ -169,7 +170,9 @@
     </div>
     <!-- header content end -->
 </header>
+
    @yield('content')
+
 <footer >
     <!-- footer content begin -->
     <div class="uk-section uk-section-primary uk-padding-large uk-padding-remove-horizontal uk-margin-medium-top" style="background-color:#010847;">
@@ -216,7 +219,7 @@
                     </div>
                 </div>
                 <div class="uk-width-1-2@m in-copyright-text">
-                    <p>© Easytrade Pro 2022. All rights reserved.</p>
+                    <p>© {{ env('APP_NAME') }} {{ Date('Y') }}. All rights reserved.</p>
                 </div>
                 <div class="uk-width-1-2@m uk-text-right@m in-footer-socials">
                     <a href="#"><i class="fab fa-youtube"></i></a>
