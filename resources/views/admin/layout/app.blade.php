@@ -148,7 +148,7 @@
                         </a>
                     </li>
                     <li class="nav-main-item">
-                        <a class="nav-main-link" href="{{ route('admin.dashboard') }}">
+                        <a class="nav-main-link" href="{{ route('admin.security') }}">
                             <i class="nav-main-link-icon fa fa-shield-alt"></i>
                             <span class="nav-main-link-name">Security</span>
                         </a>

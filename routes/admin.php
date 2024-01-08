@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'as' => 'admin.'], function(){
 
     Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+    Route::get('security', [AdminController::class, 'security'])->name('security');
+    Route::post('updatePassword', [AdminController::class, 'updatePassword'])->name('updatePassword');
 
     Route::get('users', [UserController::class, 'users'])->name('users');
     Route::get('profile/{id}', [UserController::class, 'profile'])->name('profile');
