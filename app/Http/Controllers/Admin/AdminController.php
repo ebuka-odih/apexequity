@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Deposit;
+use App\Models\Funding;
 use App\Models\User;
+use App\Models\Withdrawal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -11,7 +14,11 @@ class AdminController extends Controller
 {
     public function dashboard()
     {
-        return view('admin.index');
+        $users = User::where('admin', 0)->count();
+        $deposit = Deposit::where('status', 1)->select('amount')->sum('amount');
+        $withdrawal = Withdrawal::where('status', 1)->select('amount')->sum('amount');
+        $funding = Funding::where('status', 1)->select('amount')->sum('amount');
+        return view('admin.index', compact('users', 'deposit', 'withdrawal', 'funding'));
     }
 
     public function security()
