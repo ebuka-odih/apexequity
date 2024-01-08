@@ -15,6 +15,15 @@ class Funding extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function type()
+    {
+        if ($this->f_type == 'credit')
+        {
+            return "<span class='badge bg-success'>Credit</span>";
+        }
+        return "<span class='badge bg-danger'>Debit</span>";
+    }
+
     public function status()
     {
         if ($this->status == 0){

@@ -7,7 +7,7 @@
         <div class="bg-body-light">
             <div class="content content-full">
                 <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
-                    <h1 class="flex-grow-1 fs-3 fw-semibold my-2 my-sm-3">Deposit Wallets</h1>
+                    <h1 class="flex-grow-1 fs-3 fw-semibold my-2 my-sm-3">Add / Remove Fund</h1>
                 </div>
             </div>
         </div>
@@ -24,7 +24,7 @@
                             {{ session()->get('success') }}
                         </div>
                     @endif
-                        <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modal-block-normal">Add Wallet</button>
+                    <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modal-block-normal">Add / Remove Fund</button>
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped table-vcenter">
                             <thead>
@@ -32,22 +32,27 @@
                                 <th class="text-center" style="width: 200px;">
                                     <i class="far fa-clock"></i>
                                 </th>
-                                <th>Wallet Name</th>
-                                <th>Wallet Address</th>
+                                <th>User</th>
+                                <th>Type</th>
+                                <th>Amount</th>
                                 <th class="text-center" style="width: 100px;">Actions</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($wallets as $item)
+                            @foreach($funding as $item)
                                 <tr>
                                     <td class="text-center">
                                         <span>{{ date('d-M-Y', strtotime($item->created_at)) }}</span>
                                     </td>
                                     <td class="fw-semibold">
-                                        {{ $item->name }}
+                                        {{ $item->user->name }}
                                     </td>
                                     <td>
-                                        {{ $item->value }}
+                                        {{ $item->type }}
+                                        <span>{!! $item->type() !!}</span>
+                                    </td>
+                                    <td>
+                                        @money($item->amount)
                                     </td>
                                     <td class="text-center">
                                         <div class="btn-group">
@@ -96,17 +101,29 @@
                         </div>
                     </div>
                     <div class="block-content">
-                        <form action="{{ route('admin.wallet.store') }}" method="POST">
+                        <form action="{{ route('admin.funding.store') }}" method="POST">
                             @csrf
                             <div class="form-row">
-                                <label for="name">Wallet Name</label>
-                                <input type="text" id="name" name="name" class="form-control">
+                                <label for="name">Select User</label>
+                                <select name="user_id" id="" class="form-control">
+                                    @foreach($users as $item)
+                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-row">
+                                <label for="name">Select Type</label>
+                                <select name="type" id="" class="form-control">
+                                    <option value="Deposit">Deposit</option>
+                                    <option value="Profit">Profit</option>
+                                </select>
                             </div>
                             <div class="form-row mt-3 mb-3">
-                                <label for="value">Wallet Address</label>
-                                <input type="text" id="value" name="value" class="form-control">
+                                <label for="value">Amount</label>
+                                <input type="number" id="value" name="amount" class="form-control">
                             </div>
-                            <button type="submit" class="btn btn-sm btn-primary" >Submit</button>
+                            <button type="submit" class="btn btn-sm btn-primary" name="f_type" value="credit">Credit</button>
+                            <button type="submit" class="btn btn-sm btn-danger" name="f_type" value="debit">Debit</button>
                         </form>
                     </div>
                     <div class="block-content block-content-full text-end bg-body">

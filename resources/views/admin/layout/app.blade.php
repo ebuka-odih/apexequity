@@ -142,7 +142,7 @@
                         </a>
                     </li>
                     <li class="nav-main-item">
-                        <a class="nav-main-link" href="{{ route('admin.dashboard') }}">
+                        <a class="nav-main-link" href="{{ route('admin.funding.index') }}">
                             <i class="nav-main-link-icon fa fa-money-bill"></i>
                             <span class="nav-main-link-name">Add/Remove Fund</span>
                         </a>

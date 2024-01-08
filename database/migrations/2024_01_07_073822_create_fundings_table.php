@@ -17,6 +17,7 @@ return new class extends Migration
             $table->bigInteger('user_id');
             $table->double('amount', 11, 2);
             $table->string('type')->nullable();
+            $table->string('f_type')->nullable();
             $table->integer('status')->nullable();
         });
     }

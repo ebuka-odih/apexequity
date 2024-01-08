@@ -32,8 +32,9 @@
                                     <i class="far fa-clock"></i>
                                 </th>
                                 <th>Name</th>
-                                <th style="width: 30%;">Email</th>
-                                <th style="width: 15%;">Status</th>
+                                <th>Email</th>
+                                <th>Balance</th>
+                                <th>Status</th>
                                 <th class="text-center" style="width: 100px;">Actions</th>
                             </tr>
                             </thead>
@@ -47,7 +48,11 @@
                                         {{ $item->name }}
                                     </td>
                                     <td>
-                                        <em class="text-muted">{{ $item->email }}</em></td>
+                                        <em class="text-muted">{{ $item->email }}</em>
+                                    </td>
+                                    <td>
+                                        <strong class="text-success">@money($item->balance)</strong>
+                                    </td>
                                     <td>
                                         {!! $item->adminStatus() !!}
                                     </td>

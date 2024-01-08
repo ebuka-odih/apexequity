@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminDepositsController;
+use App\Http\Controllers\Admin\AdminFundingController;
 use App\Http\Controllers\Admin\AdminPaymentMethodController;
 use App\Http\Controllers\Admin\AdminWithdrawalController;
 use App\Http\Controllers\Admin\UserController;
@@ -27,4 +28,5 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'as' => 'a
     Route::delete('delete/deposit/{id}', [AdminDepositsController::class, 'deleteDeposit'])->name('deleteDeposit');
 
     Route::resource('wallet', AdminPaymentMethodController::class);
+    Route::resource('funding', AdminFundingController::class);
 });
