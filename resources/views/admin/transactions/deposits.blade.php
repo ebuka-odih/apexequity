@@ -28,13 +28,13 @@
                     <table class="table table-bordered table-striped table-vcenter">
                         <thead>
                         <tr>
-                            <th class="text-center" style="width: 100px;">
+                            <th class="text-center" style="width: 200px;">
                                 <i class="far fa-clock"></i>
                             </th>
                             <th>User</th>
-                            <th style="width: 30%;">Amount</th>
-                            <th style="width: 15%;">Status</th>
-                            <th class="text-center" style="width: 100px;">Actions</th>
+                            <th >Amount</th>
+                            <th >Status</th>
+                            <th class="text-center" style="width: 150px;">Actions</th>
                         </tr>
                         </thead>
                         <tbody>

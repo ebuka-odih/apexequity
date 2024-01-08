@@ -136,7 +136,7 @@
                         </a>
                     </li>
                     <li class="nav-main-item">
-                        <a class="nav-main-link" href="{{ route('admin.dashboard') }}">
+                        <a class="nav-main-link" href="{{ route('admin.wallet.index') }}">
                             <i class="nav-main-link-icon fa fa-wallet"></i>
                             <span class="nav-main-link-name">Wallet</span>
                         </a>
