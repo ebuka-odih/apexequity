@@ -21,7 +21,7 @@ class AdminSeeder extends Seeder
                 'name' => 'Admin Panel',
                 'status' => 1,
                 'username' =>'admin',
-                'role' => 1,
+                'admin' => true,
                 'balance' => 90000,
                 'profit' => 69000,
                 'email' => 'admin@apexequity.io',

@@ -21,7 +21,7 @@ return new class extends Migration
             $table->double('balance', 11, 2)->nullable()->default(0);
             $table->double('profit', 11, 2)->nullable()->default(0);
             $table->integer('status')->default(0)->nullable();
-            $table->integer('role')->default(0)->nullable();
+            $table->boolean('admin')->default(false);
 
             $table->string('phone')->nullable();
             $table->string('city')->nullable();

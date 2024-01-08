@@ -42,4 +42,40 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function withdrawal()
+    {
+        return $this->belongsTo(Withdrawal::class, 'user_id');
+    }
+    public function deposit()
+    {
+        return $this->belongsTo(Deposit::class, 'user_id');
+    }
+    public function funding()
+    {
+        return $this->belongsTo(Funding::class, 'user_id');
+    }
+
+    public function status()
+    {
+        if ($this->status < 0){
+            return "<span class='badge bg-danger text text-uppercase'>Inactive</span>";
+        }elseif ($this->status >= 0){
+            return "<span class='badge bg-success text text-uppercase'>Active</span>";
+        }else{
+            return "<span class='badge bg-warning text text-uppercase'>Blocked</span>";
+        }
+    }
+    public function adminStatus()
+    {
+        if ($this->status < 0){
+            return "<span class='badge bg-danger text text-uppercase'>Inactive</span>";
+        }elseif ($this->status >= 0){
+            return "<span class='badge bg-success text text-uppercase'>Active</span>";
+        }else{
+            return "<span class='badge bg-warning text text-uppercase'>Blocked</span>";
+        }
+    }
+
+
 }

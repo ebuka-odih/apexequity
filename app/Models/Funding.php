@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Deposit extends Model
+class Funding extends Model
 {
     use HasFactory;
-
     protected $guarded = [];
 
     public function user()
@@ -26,5 +25,4 @@ class Deposit extends Model
             return "<span class='badge bg-warning text text-uppercase'>Cancelled</span>";
         }
     }
-
 }

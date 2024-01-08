@@ -102,7 +102,7 @@ color: white;
                 <nav class="navbar navbar-expand-lg navbar-light p-0" style="width:1000px;">
                     <div class="" style="margin-top:-80px; margin-right:-150px; width:1000px; background-color:#131313; color:#dbdbdb;">
                         <div>
-                            <a href="bar" style="margin-left:0px;"><img src="{{ asset('images/menu (3).png') }}" alt="menu" width="100px"></a>
+                            <a href="{{ route('user.menu') }}" style="margin-left:0px;"><img src="{{ asset('images/menu (3).png') }}" alt="menu" width="100px"></a>
                             <h2 style="font-weight: bolder; color: white; font-size: 30px">{{ env('APP_NAME') }}</h2>
 {{--                            <img src="{{ asset('images/in-logo-1.png') }}" alt="logo" style="padding-bottom:20px; width:190px; margin-top:20px; margin-left:50px;">--}}
                         </div>
@@ -525,6 +525,10 @@ color: white;
 
 
                 <!--<script src="user_notifications.js"></script>-->
-
+                <script>
+                    function boda(val) {
+                        document.querySelector("#" + val).style = 'background-color:#000; width:950px; border: 2px solid red!important;';
+                    }
+                </script>
 </body>
 </html>

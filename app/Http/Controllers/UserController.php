@@ -15,7 +15,7 @@ class UserController extends Controller
 
     public function menu()
     {
-        return view('dashboard.app');
+        return view('dashboard.layout.app');
     }
 
 
