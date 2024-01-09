@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('status')->default(0);
             $table->bigInteger('payment_method_id')->nullable();
             $table->bigInteger('user_id');
+            $table->string('payment_proof')->nullable();
         });
     }
 

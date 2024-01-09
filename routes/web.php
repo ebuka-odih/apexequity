@@ -26,6 +26,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
     Route::get('menu', [UserController::class, 'menu'])->name('menu');
 
     Route::get('deposit', [DepositController::class, 'deposit'])->name('deposit');
+    Route::post('process/deposit', [DepositController::class, 'processDeposit'])->name('processDeposit');
+    Route::get('payment/{id}', [DepositController::class, 'payment'])->name('payment');
+    Route::patch('process/payment', [DepositController::class, 'processPayment'])->name('processPayment');
 });
 
 Route::get('/dashboard', function () {

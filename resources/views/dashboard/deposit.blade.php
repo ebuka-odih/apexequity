@@ -13,23 +13,18 @@
                             </div>
                             <div class="iq-card-body">
                                 <p style="font-size:40px;"><b>Deposit Method</b></p>
-                                <form action="" method="post" autocomplete="off" id="withdrawal-form" class="was-validated" enctype="multipart/form-data">
+                                <form action="{{ route('user.processDeposit') }}" method="post" autocomplete="off" id="withdrawal-form" class="was-validated" enctype="multipart/form-data">
+                                    @csrf
 
 
                                     <div class="form-group">
-                                        <select name="depositmethod"  style="background-color:#131313; color:#dbdbdb;" id="withdrawalMethod" class="form-control" required>
-                                            <option value="" style="font-size:30px;"><b>---Select Method---</b></option>
+                                        <select name="payment_method_id"  style="background-color:#131313; color:#dbdbdb;" id="withdrawalMethod" class="form-control" required>
+                                            <option  style="font-size:30px;"><b>---Select Method---</b></option>
                                             @foreach($wallets as $item)
                                                 <option value="{{ $item->id }}">{{ $item->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
-
-                                    <div id="field15" class="mb-3" style="display: None;">
-                                        <label for="validationDefault01" style="color:#dbdbdb;">USDT Wallet Address</label>
-                                        <input style="background-color:#131313;" type="text" class="form-control" id="validationDefault01" value="0x94299225840135038F567d414e94Bcc8Eeb2E5BF" disabled>
-                                    </div>
-
                                     <div class="mb-3">
                                         <label for="validationTextarea"  style="color:#dbdbdb;">Amount ($)</label>
                                         <input type="number" class="form-control is-invalid" name="amount" placeholder="Amount without $" required>

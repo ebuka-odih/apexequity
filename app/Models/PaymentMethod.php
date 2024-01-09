@@ -9,4 +9,9 @@ class PaymentMethod extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function deposit()
+    {
+        return $this->belongsTo(Deposit::class, 'payment_method_id');
+    }
 }
