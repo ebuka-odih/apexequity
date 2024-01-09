@@ -104,9 +104,7 @@
         <div class="header" style="margin-top:-80px;">
             <div>
                 <h2 style="font-weight: bolder; color: white; font-size: 30px">{{ env('APP_NAME') }}</h2>
-{{--                <img src="../img/in-logo-1.png" alt="logo" style="padding-bottom:20px; width:380px;"><!--<div></div>-->--}}
             </div>
-
         </div>
         <div class="container-fluid">
             <div class="row content-body">
@@ -182,7 +180,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="deposit" onclick="boda('deposit')">
+                <a href="{{ route('user.deposit') }}" onclick="boda('deposit')">
                     <div class="col-sm-6 col-md-6 col-lg-6">
                         <div class="iq-card iq-card-block iq-card-stretch iq-card-height" id="deposit" style="width:950px; background-color:#131313;">
                             <div class="iq-card-body">
